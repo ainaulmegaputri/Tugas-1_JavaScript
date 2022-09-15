@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ainaul Mega Putri</title>
+</head>
+<body>
+   <table>
+    <thead>
+        <tr>
+            <th>
+                NO 
+            </th>
+            <th>
+                NAMA
+            </th>
+            <th>
+                JABATAN
+            </th>
+            <th>
+                AGAMA
+            </th>
+            <th>
+                GAJI POKOK
+            </th>
+            <th>
+                TUNJANGAN JABATAN
+            </th>
+            <th>
+                TUNJANGAN KESEHATAN
+            </th>
+            <th>
+                GAJI KOTOR
+            </th>
+            <th>
+                ZAKAT PROFESI
+            </th>
+            <th>
+                TAKE HOME PAY
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <script>
+            let no, jabatan, agama, gaji_pokok, tunjangan_jabatan, tunjangan_kesehatan, gaji_kotor, zakat_profesi, take_home_pay;
+            for ( no = 1; no <= 100; no++) {
+                if (no <= 25) {
+                    jsbatan = "manager";
+                } else if (no <= 50) {
+                    jabatan = "asisten manager"
+                } else if (no <= 75) {
+                    jabatan = "supervisor"
+                } else if (no <= 100) {
+                    jabatan = "staff"
+                }
+                
+                switch (jabatan) {
+                    case "manager": 
+                        gaji_pokok = 15000000
+                        break;
+                    case "asisten manager": 
+                        gaji_pokok = 10000000
+                        break;  
+                    case "supervisor": 
+                        gaji_pokok = 7000000
+                        break;
+                    case "staff": 
+                        gaji_pokok = 4000000
+                        break;
+                    default:
+                        gaji_pokok = 3000000
+                        break;
+                }
+                tunjangan_jabatan = gaji_pokok*20/100
+                tunjangan_kesehatan = gaji_pokok*10/100
+                gaji_kotor = gaji_pokok + tunjangan_jabatan + tunjangan_kesehatan
+               agama = (no%2==0) ? "non muslim": "muslim"
+               warna = (no%2==0) ? "pink": "yellow"
+               zakat_profesi = (agama == "muslim" && gaji_kotor >= 7000000) ? gaji_kotor*2.5/100:0
+               take_home_pay = gaji_kotor - zakat_profesi
+               document.write(`
+                <tr bgcolor = "${warna}">
+                    <td>${no}</td>
+                    <td>pegawai${no}</td>
+                    <td>${jabatan}</td>
+                    <td>${agama}</td>
+                    <td>${gaji_pokok}</td>
+                    <td>${tunjangan_jabatan}</td>
+                    <td>${tunjangan_kesehatan}</td>
+                    <td>${gaji_kotor}</td>
+                    <td>${zakat_profesi}</td>
+                    <td>${take_home_pay}</td>
+        </tr>
+                `)
+            }
+
+        </script>
+        
+    </tbody>
+   </table>
+</body>
+</html>
