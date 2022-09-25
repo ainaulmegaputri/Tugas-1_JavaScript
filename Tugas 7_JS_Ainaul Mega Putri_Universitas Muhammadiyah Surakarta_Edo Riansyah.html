@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Hewan Unggas
+            </button>
+          </h2>
+          
+          <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 id="kalkun">kalkun</h3>
+                        <div class="audio"></div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 id="ayam">ayam</h3>
+                        <div class="audio"></div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 id="BurungElang">burung elang</h3>
+                        <div class="audio"></div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 id="bebek">bebek</h3>
+                        <div class="audio"></div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Hewan Ternak
+                </button>
+              </h2>
+              
+              <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 id="sapi">sapi</h3>
+                            <div class="audio"></div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 id="kerbau">kerbau</h3>
+                            <div class="audio"></div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 id="kuda">kuda</h3>
+                            <div class="audio"></div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 id="kambing">kambing</h3>
+                            <div class="audio"></div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Hewan Buas
+                    </button>
+                  </h2>
+                  
+                  <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 id="macan">macan</h3>
+                                <div class="audio"></div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card body">
+                                <h3 id="singa">singa</h3>
+                                <div class="audio"></div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 id="jaguar">jaguar</h3>
+                                <div class="audio"></div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card body">
+                                <h3 id="kudanil">kudanil</h3>
+                                <div class="audio"></div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+    <script>
+        $(dokumen).ready(function (){
+            $('.card').each(function (){
+                $(this).click(function(){
+                    let Hewan = $(this).find('h3').attr('id');
+                    $('#sound').remove();
+                    $('#gambar').remove();
+                    $(this).find('img').attr({ src:""});
+                    $(this).prepend(`<img=id="gambar" lass="img-fluid" src="img/${hewan}.jpg">`);
+                    $(this).find('.audio').prepend(`<audio src="audio/${hewan}.mpeg" autoplay id="sound"`);
+                });
+            });
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>
